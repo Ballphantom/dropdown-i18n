@@ -5,26 +5,30 @@ i18n.use(initReactI18next).init({
   resources: {
     th: {
       translation: {
+        "Menu" : "เมนู",
         "Profile": "โปรไฟล์",
         "Account": "บัญชีผู้ใช้",
         "Setting": "ตั้งค่า",
         "Log in": "เข้าสู่ระบบ",
-        "Dropdown & i18next": "ตัวเลือก และ การแปลภาษา",
+        "Language": "ภาษา",
       },
     },
     en: {
       translation: {
+        "Menu" : "Menu",
         "Profile": "Profile",
         "Account": "Account",
         "Setting": "Setting",
         "Log in": "Log in",
-        "Dropdown & i18next": "Dropdown & i18next",
+        "Language": "Language",
       },
     },
   },
-  lng: "th",
-  fallbackLng: "en",
+  lng: "en",
+  fallbackLng: "th",
   interpolation: {
     escapeValue: false,
   },
 });
+
+export default i18n;

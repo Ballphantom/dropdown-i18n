@@ -3,14 +3,14 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { useTranslation } from "react-i18next";
 
 function Dropdown() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation();
 
   return (
     <div className="Dropdown-container">
-      <div className="w-50">
-        <Menu as="div" className="relative inline-block text-left my-[1rem]">
+      <div className="">
+        <Menu as="div" className="relative inline-block text-left">
           <div>
-            <Menu.Button className="inline-flex w-full justify-center rounded-md bg-blue-600 opacity-70 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none shadow-md">
+            <Menu.Button className="inline-flex w-full justify-center rounded-md bg-blue-700 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none shadow-md">
               {t("Menu")}
               <ChevronDownIcon
                 className="ml-2 -mr-1 h-5 w-5 text-white hover:text-violet-100"
@@ -25,7 +25,7 @@ function Dropdown() {
                       className={`${
                         active ? "bg-blue-200 text-white" : "text-gray-900"
                       } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                      href="/account-settings"
+                      href="#"
                     >
                       {t("Profile")}
                     </a>
@@ -37,7 +37,7 @@ function Dropdown() {
                       className={`${
                         active ? "bg-blue-200 text-white" : "text-gray-900"
                       } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                      href="/account-settings"
+                      href="#"
                     >
                       {t("Account")}
                     </a>
@@ -49,7 +49,7 @@ function Dropdown() {
                       className={`${
                         active ? "bg-blue-200 text-white" : "text-gray-900"
                       } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                      href="/account-settings"
+                      href="#"
                     >
                       {t("Setting")}
                     </a>

@@ -1,9 +1,9 @@
 import "./App.css";
-import Card from "./components/Card";
+import Card from "./components/Navbar";
 
 function App() {
   return (
-    <div className="my-[1rem] mx-auto w-100 text-center bg-white rounded-md flex justify-between">
+    <div className="mx-auto text-center flex justify-between">
       <Card />
     </div>
   );
