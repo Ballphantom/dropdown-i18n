@@ -11,6 +11,7 @@ i18n.use(initReactI18next).init({
         "Setting": "ตั้งค่า",
         "Log in": "เข้าสู่ระบบ",
         "Language": "ภาษา",
+        "Dropdown & I18next": "เมนู & ภาษา",
       },
     },
     en: {
@@ -21,6 +22,7 @@ i18n.use(initReactI18next).init({
         "Setting": "Setting",
         "Log in": "Log in",
         "Language": "Language",
+        "Dropdown & I18next": "Dropdown & I18next",
       },
     },
   },

@@ -3,7 +3,7 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { useTranslation } from "react-i18next";
 
 function Languages() {
-  const { t, i18n } = useTranslation("common");
+  const { t, i18n } = useTranslation();
 
   const changeLanguage = (lang: any) => {
     i18n.changeLanguage(lang);
