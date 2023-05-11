@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 function Languages() {
   const { t, i18n } = useTranslation();
 
-  const changeLanguage = (lang: any) => {
+  const changeLanguage = (lang: string) => {
     i18n.changeLanguage(lang);
   };
 
@@ -15,7 +15,7 @@ function Languages() {
         <Menu as="div" className="relative inline-block text-left my-[1rem]">
           <div>
             <Menu.Button className="inline-flex w-full justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none shadow-md">
-              {t("Language")}
+              {t("Dropdown_btn_Language")}
               <ChevronDownIcon
                 className="ml-2 -mr-1 h-5 w-5 text-white hover:text-violet-100"
                 aria-hidden="true"
