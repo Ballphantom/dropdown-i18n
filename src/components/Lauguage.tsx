@@ -1,5 +1,6 @@
 import { Menu } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 function Languages() {
@@ -7,6 +8,13 @@ function Languages() {
 
   const changeLanguage = (lang: any) => {
     i18n.changeLanguage(lang);
+  };
+
+  const [selectedLanguage, setSelectedLanguage] = useState("");
+
+  const handleLanguageSelection = (language: string) => {
+    setSelectedLanguage(language);
+    changeLanguage(language);
   };
 
   return (
@@ -27,9 +35,13 @@ function Languages() {
                   {({ active }) => (
                     <button
                       className={`${
-                        active ? "bg-blue-200 text-white" : "text-gray-900"
+                        selectedLanguage === "en"
+                          ? "bg-blue-200 text-white"
+                          : active
+                          ? "bg-gray-200 text-gray-900"
+                          : "text-gray-900"
                       } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                      onClick={() => changeLanguage("en")}
+                      onClick={() => handleLanguageSelection("en")}
                     >
                       English
                     </button>
@@ -39,9 +51,13 @@ function Languages() {
                   {({ active }) => (
                     <button
                       className={`${
-                        active ? "bg-blue-200 text-white" : "text-gray-900"
+                        selectedLanguage === "th"
+                          ? "bg-blue-200 text-white"
+                          : active
+                          ? "bg-gray-200 text-gray-900"
+                          : "text-gray-900"
                       } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                      onClick={() => changeLanguage("th")}
+                      onClick={() => handleLanguageSelection("th")}
                     >
                       ไทย
                     </button>
