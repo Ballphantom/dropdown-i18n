@@ -1,34 +1,17 @@
 import { Menu } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { useTranslation } from "react-i18next";
-import { useState } from 'react'
-
-type MenuType = 'Profile' | 'Account' | 'Setting' | 'Log in';
 
 function Dropdown() {
   const { t } = useTranslation();
-  const [selectedMenu, setSelectedMenu] = useState<MenuType | null>(null);
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen)
-  }
-
-  const handleMenuSelect = (menu: MenuType) => {
-    setSelectedMenu(menu);
-    setIsOpen(false);
-  }
 
   return (
     <div className="Dropdown-container">
       <div className="">
         <Menu as="div" className="relative inline-block text-left">
           <div>
-            <Menu.Button 
-              onClick={toggleDropdown}    
-              className="inline-flex w-full justify-center rounded-md bg-blue-700 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none shadow-md"
-            >
-              {selectedMenu ? t(`Dropdown_Menu_${selectedMenu}`) : t("Dropdown_Menu")}
+            <Menu.Button className="inline-flex w-full justify-center rounded-md bg-blue-700 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none shadow-md">
+              {t("Menu")}
               <ChevronDownIcon
                 className="ml-2 -mr-1 h-5 w-5 text-white hover:text-violet-100"
                 aria-hidden="true"
@@ -38,38 +21,38 @@ function Dropdown() {
               <div className="px-1 py-1">
                 <Menu.Item>
                   {({ active }) => (
-                    <button
+                    <a
                       className={`${
                         active ? "bg-blue-200 text-white" : "text-gray-900"
                       } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                      onClick={() => handleMenuSelect('Profile')}
+                      href="#"
                     >
-                      {t("Dropdown_Menu_Profile")}
-                    </button>
+                      {t("Profile")}
+                    </a>
                   )}
                 </Menu.Item>
                 <Menu.Item>
                   {({ active }) => (
-                    <button
+                    <a
                       className={`${
                         active ? "bg-blue-200 text-white" : "text-gray-900"
                       } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                      onClick={() => handleMenuSelect('Account')}
+                      href="#"
                     >
-                      {t("Dropdown_Menu_Account")}
-                    </button>
+                      {t("Account")}
+                    </a>
                   )}
                 </Menu.Item>
                 <Menu.Item>
                   {({ active }) => (
-                    <button
+                    <a
                       className={`${
                         active ? "bg-blue-200 text-white" : "text-gray-900"
                       } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                      onClick={() => handleMenuSelect('Setting')}
+                      href="#"
                     >
-                      {t("Dropdown_Menu_Setting")}
-                    </button>
+                      {t("Setting")}
+                    </a>
                   )}
                 </Menu.Item>
               </div>
@@ -80,9 +63,8 @@ function Dropdown() {
                       className={`${
                         active ? "bg-blue-200 text-white" : "text-gray-900"
                       } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                      onClick={() => handleMenuSelect('Log in')}
                     >
-                      {t("Dropdown_Menu_Log in")}
+                      {t("Log in")}
                     </button>
                   )}
                 </Menu.Item>
